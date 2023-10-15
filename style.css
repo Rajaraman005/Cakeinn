@@ -1,0 +1,223 @@
+html {
+  scroll-behavior: smooth;
+}
+/* Reset and general styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #eec53d;
+}
+::-webkit-scrollbar {
+  background-color: #7afff8;
+  width: 0.2rem;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #06e72b;
+}
+h1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* Top menu styles */
+/* Top menu styles */
+.top-menu {
+  background-color: #ffc65b;
+  color: #000000;
+  padding: 5px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky; /* Make the menu sticky */
+  top: 0; /* Stick to the top of the viewport */
+  z-index: 100; /* Ensure the menu stays on top of other content */
+
+  /* Adjusted padding for responsiveness */
+
+  /* Additional responsive font size */
+  font-size: 18px;
+}
+
+/* Your existing nav ul and media query styles */
+
+span {
+  font-size: 24px;
+  padding-left: 10px;
+  color: red;
+  font-weight: bold;
+  padding-left: 20px;
+}
+
+.top-menu nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.top-menu nav ul li {
+  margin: 0;
+  padding: 0;
+}
+
+.top-menu nav ul li a {
+  text-decoration: none;
+  color: #000000;
+  padding: 10px 10px; /* Adjusted padding */
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.top-menu nav ul li a:hover {
+  background-color: #db2e2e;
+  color: #fff;
+}
+
+/* About section styles */
+.about {
+  display: flex;
+  align-items: center;
+  margin: 150px auto;
+  padding: 20px;
+  color: #000000;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  background-color: #fff;
+
+  max-height: 1024px; /* Increase the height */
+}
+
+.about img {
+  max-width: 520px;
+  max-height: 420px; /* Adjust the height as needed */
+  margin-right: 20px;
+  box-shadow: 3px 14px 10px 3px;
+}
+
+.text-box {
+  flex: 1;
+}
+
+.text-box h2 {
+  color: rgb(0, 0, 0);
+}
+
+.slider-container {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.slider {
+  display: flex;
+  transition: transform 1s ease-in-out;
+  width: 100%; /* Ensure each image takes up full width */
+}
+
+.slider img {
+  flex-shrink: 0; /* Prevent images from shrinking */
+  width: 100%;
+  height: 770px;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1vh;
+  margin-inline: auto;
+  max-width: 100rem;
+  background: #141414;
+  padding: 1vh;
+}
+
+.gallery > img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  transition: all 0.3s ease;
+}
+
+.gallery:has(img:hover) img:not(:hover) {
+  scale: 0.8;
+  opacity: 0.5;
+  filter: grayscale(100%);
+}
+.contact img {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Media Queries for responsiveness */
+@media (100px <= width <= 640px) {
+  .top-menu {
+    font-size: 15px;
+    width: 100%;
+    font: bold;
+    justify-content: space-between;
+    padding-left: 0; /* Remove negative padding */
+    letter-spacing: 1px;
+    column-gap: -2px;
+    display: flex;
+    align-items: center;
+  }
+  html {
+    overflow-x: hidden;
+  }
+
+  /* Adjust styles for the logo */
+  .top-menu img {
+    max-width: 50px; /* Set a suitable width for your logo */
+    margin-left: 10px; /* Add space between the logo and menu items */
+  }
+
+  .top-menu nav ul li {
+    display: block;
+    column-gap: -2px;
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    text-align: right; /* Align menu items to the right */
+  }
+
+  span {
+    font-size: 17px;
+    padding-left: 0;
+    margin-left: 2px;
+    white-space: nowrap; /* Prevent line breaks */
+    overflow: hidden; /* Hide overflowed text */
+    text-overflow: ellipsis; /* Show ellipsis (...) for truncated text */
+  }
+
+  .about {
+    margin: 50px auto;
+    padding: 10px;
+    flex-direction: column;
+  }
+
+  .about img {
+    max-width: 100%;
+    max-height: none;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+  .slider-container {
+    max-width: 100%;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .slider {
+    transition: transform 2s ease-in-out;
+    width: 300%; /* Three images side by side */
+  }
+
+  .slider img {
+    flex-shrink: 0;
+    width: 33.333%; /* Each image occupies one third of the width */
+    height: auto;
+  }
+  .contact img {
+    max-width: 100%; /* Reduce the width for smaller screens */
+  }
+}
